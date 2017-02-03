@@ -23,7 +23,6 @@ RSpec.feature "Listing Articles" do
 
   end
 
-
   scenario "A user has no articles" do
 
     Article.delete_all
