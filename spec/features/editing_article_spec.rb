@@ -4,7 +4,9 @@ RSpec.feature "Editing an article" do
 
   # create an article
   before do
-    @article = Article.create(title: "First Article", body: "Lorem lorem lorem")
+    john = User.create!(email: "me@example.com", password: "password")
+    login_as(john)
+    @article = Article.create(title: "First Article", body: "Lorem lorem lorem", user: john)
   end
 
   scenario "A user updates an article" do
