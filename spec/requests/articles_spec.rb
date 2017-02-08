@@ -37,10 +37,10 @@ RSpec.describe "Articles", type: :request do
     #     login_as(@john)
     #     delete "/articles/#{@article.id}"
     #   end
-    #   it "succesfully deletes the artile" do
+    #   it "succesfully deletes the article" do
     #     expect(response.status).to eq 200
-    #     # flash_message = "Article has been deleted."
-    #     # expect(flash[:succes]).to eq flash_message
+    #     flash_message = "Article has been deleted."
+    #     expect(flash[:succes]).to eq flash_message
     #   end
     # end
 
