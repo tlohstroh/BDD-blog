@@ -9,6 +9,8 @@ class CommentsController < ApplicationController
       redirect_to new_user_session_path
     else
       if @comment.save
+        ActionCable.server.broadcast "comments",
+          render(partial: 'comments/comment', object: @comment)
         flash[:notice] = "Comment has been created"
       else
         flash.now[:alert] = "Comment has not been created"
